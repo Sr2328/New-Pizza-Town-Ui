@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Pizza Town</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="/IMAGE/MAIN LOGO NEW.png " alt="Pizza Town Logo" height="40">
+                <span>New Pizza Town</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link"><i class="fas fa-home"></i>Home</a>
+                <a href="menu.html" class="nav-link active"><i class="fas fa-utensils"></i>Menu</a>
+                <a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i>About</a>
+                <a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i>Contact</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+   
+    <div class="menu-container">
+        <div class="category-buttons">
+            <button class="category-btn active" data-category="all">
+                <i class="fas fa-th-large"></i> All
+            </button>
+            <button class="category-btn" data-category="pizza">
+                <i class="fas fa-pizza-slice"></i> Pizza
+            </button>
+            <button class="category-btn" data-category="burgers">
+                <i class="fas fa-hamburger"></i> Burgers
+            </button>
+            <button class="category-btn" data-category="pasta">
+                <i class="fas fa-utensils"></i> Pasta
+            </button>
+            <button class="category-btn" data-category="beverages">
+                <i class="fas fa-glass-cheers"></i> Beverages
+            </button>
+            <button class="category-btn" data-category="sandwich">
+                <i class="fas fa-bread-slice"></i> Sandwich
+            </button>
+            <button class="category-btn" data-category="snacks">
+                <i class="fas fa-cookie"></i> Snacks
+            </button>
+            <button class="category-btn" data-category="maggie">
+                <i class="fas fa-bowl-food"></i> Maggie
+            </button>
+            <button class="category-btn" data-category="wrap">
+                <i class="fas fa-scroll"></i> Wrap
+            </button>
+            <button class="category-btn" data-category="omelette">
+                <i class="fas fa-egg"></i> Omelette
+            </button>
+        </div>
+
+        <div class="menu-grid">
+            <!-- Menu items will be loaded here -->
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Your Cart</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div id="cartItems" class="cart-items">
+                <!-- Cart items will be added here -->
+            </div>
+            <div class="cart-total">
+                Total: <span id="cartTotal">₹0</span>
+            </div>
+            <form id="orderForm" class="order-form">
+                <div class="form-group">
+                    <input type="text" id="customerName" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="tableNumber" placeholder="Table Number" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" 
+                           id="phoneNumber" 
+                           placeholder="Phone Number" 
+                           pattern="[0-9]{10}"
+                           maxlength="10"
+                           title="Please enter a valid 10-digit phone number"
+                           required>
+                    <span class="error-message" id="phoneError"></span>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" class="submit-btn">Place Order</button>
+                    <button type="button" class="cancel-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Cart Button -->
+    <button id="cartBtn" class="cart-btn">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cartCount">0</span>
+    </button>
+
+    <!-- Success Popup -->
+    <div id="successPopup" class="popup">
+        <div class="popup-content">
+            <i class="fas fa-check-circle"></i>
+            <h3>Order Placed Successfully!</h3>
+            <p>Your order will be served at table <span id="popupTableNumber"></span></p>
+        </div>
+    </div>
+
+    <script src="/JS/menu.js"></script>
+</body>
+</html>
