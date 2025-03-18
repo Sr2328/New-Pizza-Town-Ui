@@ -92,7 +92,7 @@ const menuItems = [
          name: 'Maharaja-Burger',
          description: 'Grilled Tikki, mayo, lettuce, tomato',
          price: '₹120',
-         image: '/IMAGE/veg-maharja-burger.jpeg'
+         image: './IMAGE/'
      }, {
          category: 'burgers',
          name: 'Veg-Classic Burger',
