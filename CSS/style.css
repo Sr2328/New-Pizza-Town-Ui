@@ -3887,218 +3887,217 @@ body {
 
 /* Menu Grid */
 /* Menu Grid and Item Styles */
-.menu-grid {
-   display: grid;
-   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-   gap: 1.5rem;
-   padding: 1rem;
+/* Menu Container Layout */
+.menu-container {
    max-width: 1200px;
-   margin: 0 auto;
-}
-
-.menu-item {
+   margin: 80px auto 2rem;
+   padding: 0 1.5rem;
+ }
+ 
+ /* Category Navigation */
+ .category-section {
+   position: sticky;
+   top: 70px;
+   z-index: 90;
+   background: rgba(0, 0, 0, 0.95);
+   backdrop-filter: blur(10px);
+   padding: 1rem 0;
+   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+ }
+ 
+ .category-buttons {
+   display: flex;
+   gap: 1rem;
+   padding: 0.5rem;
+   overflow-x: auto;
+   scrollbar-width: none;
+   -ms-overflow-style: none;
+   scroll-behavior: smooth;
+ }
+ 
+ .category-buttons::-webkit-scrollbar {
+   display: none;
+ }
+ 
+ .category-btn {
+   background: rgba(255, 255, 255, 0.05);
+   border: none;
+   padding: 0.8rem 1.5rem;
+   color: var(--light);
+   border-radius: 25px;
+   font-size: 0.9rem;
+   font-weight: 500;
+   white-space: nowrap;
+   transition: all 0.3s ease;
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+ }
+ 
+ .category-btn i {
+   font-size: 1.1rem;
+ }
+ 
+ .category-btn:hover,
+ .category-btn.active {
+   background: var(--gradient);
+   transform: translateY(-2px);
+   box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3);
+ }
+ 
+ /* Menu Grid Layout */
+ .menu-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+   gap: 2rem;
+   padding: 2rem 0;
+ }
+ 
+ /* Menu Item Card */
+ .menu-item {
    background: rgba(255, 255, 255, 0.05);
    border-radius: 15px;
-   overflow: hidden;
-   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-   position: relative;
    border: 1px solid rgba(255, 255, 255, 0.1);
-   backdrop-filter: blur(10px);
-   height: fit-content;
-}
-
-.menu-item:hover {
-   transform: translateY(-5px);
-   box-shadow: 0 8px 25px rgba(255, 71, 87, 0.2);
-}
-
-.menu-img {
+   overflow: hidden;
+   transition: all 0.3s ease;
+ }
+ 
+ .menu-item:hover {
+   transform: translateY(-10px);
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+   border-color: rgba(255, 71, 87, 0.3);
+   background: rgba(255, 71, 87, 0.1);
+ }
+ 
+ .menu-img {
    width: 100%;
-   height: 160px;
+   height: 200px;
    object-fit: cover;
    transition: transform 0.5s ease;
-}
-
-.menu-item:hover .menu-img {
-   transform: scale(1.05);
-}
-
-.menu-content {
-   padding: 1.2rem;
-}
-
-.menu-name {
-   font-size: 1.1rem;
-   margin-bottom: 0.5rem;
-   background: var(--gradient);
-   background-clip: text;
-   -webkit-text-fill-color: transparent;
-   font-weight: 600;
-   line-height: 1.3;
-}
-
-.menu-desc {
-   font-size: 0.8rem;
-   color: var(--light);
-   margin-bottom: 0.8rem;
-   opacity: 0.8;
-   line-height: 1.4;
-   height: 2.8rem;
-   overflow: hidden;
-   display: -webkit-box;
-   -webkit-line-clamp: 2;
-   line-clamp: 2;
-   -webkit-box-orient: vertical;
-}
-
-.menu-price {
-   font-size: 1.1rem;
-   font-weight: 600;
-   color: var(--accent);
-   margin-bottom: 0.8rem;
-   display: flex;
-   align-items: center;
-   gap: 0.3rem;
-}
-
-.item-controls {
-   display: flex;
-   align-items: center;
-   gap: 0.8rem;
-   margin-top: 0.8rem;
-}
-
-.quantity-btn {
-   background: var(--glass);
-   border: 1px solid rgba(255, 255, 255, 0.1);
-   color: var(--light);
-   width: 28px;
-   height: 28px;
-   border-radius: 50%;
-   cursor: pointer;
-   transition: all 0.3s;
-   font-size: 1rem;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-}
-
-.quantity {
-   font-size: 1rem;
-   font-weight: 500;
-   min-width: 25px;
+ }
+ 
+ .menu-item:hover .menu-img {
+   transform: scale(1.1);
+ }
+ 
+ .menu-content {
+   padding: 1.5rem;
    text-align: center;
-}
-
-.add-to-cart-btn {
-   flex: 1;
+ }
+ 
+ .menu-name {
+   font-size: 1.2rem;
+   font-weight: 600;
+   color: var(--light);
+   margin-bottom: 0.5rem;
+ }
+ 
+ .menu-desc {
+   font-size: 0.9rem;
+   color: rgba(255, 255, 255, 0.7);
+   margin-bottom: 1rem;
+   line-height: 1.4;
+   min-height: 2.5rem;
+ }
+ 
+ .menu-price {
+   font-size: 1.3rem;
+   font-weight: 700;
+   color: var(--accent);
+   margin-bottom: 1rem;
+ }
+ 
+ .add-to-cart-btn {
+   width: 100%;
+   padding: 0.8rem;
    background: var(--gradient);
    color: var(--light);
    border: none;
-   padding: 0.6rem;
    border-radius: 25px;
+   font-weight: 500;
    cursor: pointer;
-   transition: all 0.3s;
+   transition: all 0.3s ease;
    display: flex;
    align-items: center;
    justify-content: center;
    gap: 0.5rem;
-   font-weight: 500;
-   font-size: 0.9rem;
-   text-transform: uppercase;
-   letter-spacing: 0.5px;
-}
-
-.add-to-cart-btn i {
-   font-size: 0.9rem;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
+ }
+ 
+ .add-to-cart-btn:hover {
+   transform: translateY(-2px);
+   box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3);
+ }
+ 
+ /* Responsive Design */
+ @media (max-width: 1200px) {
    .menu-grid {
-       grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-       gap: 1rem;
+     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+     gap: 1.5rem;
    }
-
-   .menu-img {
-       height: 140px;
-   }
-
-   .menu-content {
-       padding: 1rem;
-   }
-
-   .menu-name {
-       font-size: 1rem;
-   }
-
-   .menu-desc {
-       font-size: 0.75rem;
-       height: 2.4rem;
-   }
-
-   .menu-price {
-       font-size: 1rem;
-   }
-
-   .quantity-btn {
-       width: 25px;
-       height: 25px;
-   }
-
-   .add-to-cart-btn {
-       font-size: 0.8rem;
-       padding: 0.5rem;
-   }
-}
-/* Enhanced Mobile Menu Responsiveness */
-@media (max-width: 768px) {
-   /* Menu Grid Adjustments */
-   .menu-grid {
-     grid-template-columns: repeat(2, 1fr);
-     gap: 1rem;
-     padding: 0.5rem;
+ }
+ 
+ @media (max-width: 768px) {
+   .menu-container {
+     padding: 0 1rem;
+     margin-top: 70px;
    }
  
-   /* Menu Item Card Adjustments */
-   .menu-item {
-     padding: 0.8rem;
-     min-height: auto;
-   }
- 
-   .menu-img {
-     height: 120px;
-   }
- 
-   .menu-content {
-     padding: 0.8rem;
-   }
- 
-   .menu-name {
-     font-size: 0.9rem;
-     margin-bottom: 0.3rem;
-   }
- 
-   .menu-desc {
-     font-size: 0.75rem;
-     margin-bottom: 0.5rem;
-     -webkit-line-clamp: 2;
-   }
- 
-   .menu-price {
-     font-size: 0.9rem;
-     margin-bottom: 0.5rem;
-   }
- 
-   /* Category Section Adjustments */
    .category-section {
-     top: 60px;
      padding: 0.5rem 0;
    }
  
    .category-buttons {
-     padding: 0 2rem;
-     gap: 0.5rem;
+     padding: 0.5rem 1rem;
+     gap: 0.8rem;
+   }
+ 
+   .category-btn {
+     padding: 0.6rem 1.2rem;
+     font-size: 0.85rem;
+   }
+ 
+   .menu-grid {
+     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+     gap: 1rem;
+     padding: 1rem 0;
+   }
+ 
+   .menu-img {
+     height: 160px;
+   }
+ 
+   .menu-content {
+     padding: 1rem;
+   }
+ 
+   .menu-name {
+     font-size: 1.1rem;
+   }
+ 
+   .menu-desc {
+     font-size: 0.85rem;
+     min-height: 2rem;
+   }
+ 
+   .menu-price {
+     font-size: 1.2rem;
+   }
+ 
+   .add-to-cart-btn {
+     padding: 0.7rem;
+     font-size: 0.9rem;
+   }
+ }
+ 
+ @media (max-width: 480px) {
+   .menu-grid {
+     grid-template-columns: 1fr;
+     max-width: 300px;
+     margin: 0 auto;
+   }
+ 
+   .menu-img {
+     height: 180px;
    }
  
    .category-btn {
@@ -4106,40 +4105,30 @@ body {
      font-size: 0.8rem;
    }
  
-   /* Cart Button Adjustments */
-   .cart-btn {
-     width: 50px;
-     height: 50px;
-     bottom: 1rem;
-     right: 1rem;
-     font-size: 1.2rem;
-   }
- 
-   #cartCount {
-     width: 20px;
-     height: 20px;
-     font-size: 0.75rem;
-     top: -5px;
-     right: -5px;
+   .category-btn i {
+     font-size: 1rem;
    }
  }
  
- /* Extra Small Devices */
- @media (max-width: 480px) {
-   .menu-grid {
-     grid-template-columns: 1fr;
-     padding: 0.5rem;
+ /* Animation for menu items */
+ @keyframes fadeInUp {
+   from {
+     opacity: 0;
+     transform: translateY(20px);
    }
- 
-   .menu-item {
-     max-width: 300px;
-     margin: 0 auto;
+   to {
+     opacity: 1;
+     transform: translateY(0);
    }
+ }
  
-   .menu-img {
-     height: 150px;
-   }
+ .menu-item {
+   animation: fadeInUp 0.6s ease backwards;
+ }
  
+ .menu-item:nth-child(2) { animation-delay: 0.2s; }
+ .menu-item:nth-child(3) { animation-delay: 0.3s; }
+ .menu-item:nth-child(4) { animation-delay: 0.4s; }
    /* Modal Adjustments */
    .modal-content {
      width: 95%;
