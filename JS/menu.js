@@ -230,7 +230,7 @@ const menuItems = [
          name: 'Milk Shake',
          description: 'Chocolate,Butterscotch,Strawberry',
          price: '₹80',
-         image: '/IMAGE/combo milk shkae.jpeg'
+         image: './IMAGE/combo milk shkae.jpeg'
      }, {
          category: 'beverages',
          name: 'Milk Shake',
