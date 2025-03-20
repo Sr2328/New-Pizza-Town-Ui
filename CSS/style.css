@@ -4150,7 +4150,7 @@ body {
      padding: 0.6rem;
      font-size: 0.9rem;
    }
- }
+ 
  
  /* Landscape Mode Optimization */
  @media (max-height: 500px) and (orientation: landscape) {
