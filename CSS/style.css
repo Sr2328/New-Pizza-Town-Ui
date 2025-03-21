@@ -5130,6 +5130,7 @@ showcase-image::before {
    text-transform: uppercase;
    letter-spacing: 1px;
    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
+  TEXT-DECORATION: none;
 }
 
 .TRY::before {
