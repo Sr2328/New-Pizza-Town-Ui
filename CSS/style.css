@@ -1056,6 +1056,7 @@ body {
   transition: all 0.3s ease;
   width: 100%;
   margin-top: 1rem;
+  text-decoration: none;
 }
 
 .add-to-cart:hover,
