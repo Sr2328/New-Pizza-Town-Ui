@@ -1,22 +1,40 @@
  // THIS IS INDEX JS CODE
 
  // Get current day and highlight it
- document.addEventListener('DOMContentLoaded', function() {
-  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  const today = new Date().getDay();
-  const currentTime = new Date().getHours();
+document.addEventListener('DOMContentLoaded', function() {
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const today = new Date().getDay();
+    const currentTime = new Date().getHours();
 
-  const dayElements = document.querySelectorAll('.day-time');
-  dayElements[today].classList.add('current');
+    const dayElements = document.querySelectorAll('.day-time');
 
-  // Check if currently open
-  const timeElement = dayElements[today].querySelector('.time');
-  const [openHour, closeHour] = timeElement.textContent.split(' - ')
-      .map(time => parseInt(time.split(':')[0]));
+    // Check if the element for the current day exists
+    if (!dayElements[today]) {
+        console.error('Day element for today not found');
+        return;
+    }
 
-  if (currentTime >= openHour && currentTime < closeHour) {
-      dayElements[today].classList.add('current');
-  }
+    dayElements[today].classList.add('current');
+
+    // Check if the time element exists and has the expected format
+    const timeElement = dayElements[today].querySelector('.time');
+    if (!timeElement || !timeElement.textContent.includes(' - ')) {
+        console.error('Time element not found or does not contain the expected format');
+        return;
+    }
+
+    const [openHour, closeHour] = timeElement.textContent.split(' - ')
+        .map(time => parseInt(time.split(':')[0], 10));
+
+    if (isNaN(openHour) || isNaN(closeHour)) {
+        console.error('Open or close hour is not a valid number');
+        return;
+    }
+
+    // Check if currently open
+    if (currentTime >= openHour && currentTime < closeHour) {
+        dayElements[today].classList.add('current');
+    }
 });
 // THIS IS CONTACT JS CODE
  // Wait for DOM to be fully loaded
