@@ -74,7 +74,7 @@ const menuItems = [
          name: 'Veg Crunch Burger',
          description: 'Beef patty, cheddar cheese, lettuce, tomato',
          price: '₹40',
-         image: '../IMAGE/veg-crunch.jpeg'
+         image: '../IMAGE/veg crunch burger.jpg'
      }, {
          category: 'burgers',
          name: 'Veg-Spicy Burger',
