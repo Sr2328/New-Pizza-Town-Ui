@@ -6,11 +6,8 @@ const menuItems = [
          name: 'Tomato Pizza',
          description: 'Classic tomato base pizza',
          price: '₹130',
-<<<<<<< HEAD
          image: '/IMAGE/TOMATO-PIZZA-MENU.avif' // Updated image path'
-=======
-         image: '../IMAGE/tomato-pizza.jpg' // Updated image path'
->>>>>>> 126ca4f2cff8d58e6f993380b2d09a174cebbf1c
+
      }, {
          category: 'pizza',
          name: 'Onion Pizza',
@@ -28,11 +25,9 @@ const menuItems = [
          name: 'Mix Veg Pizza',
          description: 'Assorted vegetables',
          price: '₹150',
-<<<<<<< HEAD
+
          image: '/IMAGE/MIX-VEG-PIZZA.webp'
-=======
-         image: '../IMAGE/mix-pizza.jpg'
->>>>>>> 126ca4f2cff8d58e6f993380b2d09a174cebbf1c
+
      }, {
          category: 'pizza',
          name: 'Farm House Pizza',
