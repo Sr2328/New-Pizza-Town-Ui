@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>New Pizza Town - Indian Restaurant</title>
-   <link rel="stylesheet" href="./CSS/style.css">
+   <link rel="stylesheet" href="../CSS/style.css">
 </head>
 
 <body>
@@ -127,7 +127,7 @@
                                     </span>
                                  
                                 </div>
-                                <a href=".menu.html#beverages" class="explore-btn">Explore Menu</a>
+                                <a href="./HTML FILES/menu.html" class="explore-btn">Explore Menu</a>
                             </div>
                         </div>
                     </div>
@@ -145,7 +145,7 @@
                 <div class="items-grid">
                     <!-- Existing Items -->
                     <div class="item-card">
-                        <img class="item-img" src="./IMAGE/veg-crunch.jpeg" alt="Veg Crunch Burger" loading="lazy">
+                        <img class="item-img" src="../IMAGE/veg-crunch.jpeg" alt="Veg Crunch Burger" loading="lazy">
                         <span class="item-name">Veg Crunch Burger</span>
                         <p class="item-description">Crispy patty with fresh veggies</p>
                         <span class="item-price">₹40</span>
@@ -153,7 +153,7 @@
                     </div>
 
                     <div class="item-card">
-                        <img class="item-img" src="./IMAGE/cheese-burst-pizza.jpeg" alt="Classic Pizza" loading="lazy">
+                        <img class="item-img" src="../IMAGE/cheese-burst-pizza.jpeg" alt="Classic Pizza" loading="lazy">
                         <span class="item-name">Cheese Burst Pizza</span>
                         <p class="item-description">Fresh toppings & cheese</p>
                         <span class="item-price">₹120</span>
@@ -162,15 +162,15 @@
 
                     <!-- New Items -->
                     <div class="item-card">
-                        <img class="item-img" src="./IMAGE/cold coffee.jpeg" alt="Cold Coffee" loading="lazy">
+                        <img class="item-img" src="../IMAGE/cold coffee.jpeg" alt="Cold Coffee" loading="lazy">
                         <span class="item-name">Cold Coffee</span>
                         <p class="item-description">Rich & creamy with cream</p>
                         <span class="item-price">₹80</span>
-                        <span class="TRY">TRY NOW</span>
+                        <a href="./HTML FILES/menu.html" class="TRY">TRY NOW</a>
                     </div>
 
                     <div class="item-card">
-                        <img class="item-img" src="./IMAGE/veg-maggie - Copy.jpeg" alt="Masala Maggi" loading="lazy">
+                        <img class="item-img" src="../IMAGE/veg-maggie - Copy.jpeg" alt="Masala Maggi" loading="lazy">
                         <span class="item-name">veg Maggie</span>
                         <p class="item-description">Special spiced noodles</p>
                         <span class="item-price">₹60</span>
@@ -225,12 +225,12 @@
                     <span>Desserts</span>
                 </div>
             </div>
-         <button class="menu-btn" onclick="window.location.href='menu.html'">Explore Full Menu</button>
+         <button class="menu-btn" onclick="window.location.href='./HTML FILES/menu.html'">Explore Full Menu</button>
         </div>
       
     </div>
     <div class="showcase-image">
-        <img src="./IMAGE/MAIN LOGO NEW.png" alt="Food Showcase" loading="lazy">
+        <img src="./IMAGE/showcase flyer.png" alt="Food Showcase" loading="lazy">
     </div>
 </div>
         <div class="div5">
@@ -273,17 +273,7 @@
                         <span class="review-date">2 weeks ago</span>
                     </div>
                     <!-- Add this new review card -->
-                    <div class="review-card">
-                        <div class="reviewer-profile">
-                            <img src="/IMAGE/1000004337.jpg" alt="Anjali Sharma" class="reviewer-img">
-                            <div class="reviewer-info">
-                                <h3>Anjali Sharma</h3>
-                                <div class="stars">⭐⭐⭐⭐⭐</div>
-                            </div>
-                        </div>
-                        <p class="review-text">"Loved the pasta! Will definitely order again."</p>
-                        <span class="review-date">3 days ago</span>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -352,13 +342,14 @@
                     <span>info@pizzatown.com</span>
                 </div>
             </div>
-                <button class="order-btn">Order Now</button>
+                <button class="order-btn" onclick="window.location.href='menu.html'"
+                >Order Now</button>
             </div>
 
     </main>
 
 <!-- Add this before closing body tag -->
-<script src="./JS/categories-scroll.js"></script>
+<script src="./JS/ui.js"></script>
 <script src=".JS/categories-scroll.js"></script>
 
 </body>

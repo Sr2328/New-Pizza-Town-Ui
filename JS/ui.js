@@ -1,23 +1,62 @@
  // THIS IS INDEX JS CODE
-
- // Get current day and highlight it
  document.addEventListener('DOMContentLoaded', function() {
-  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  const today = new Date().getDay();
-  const currentTime = new Date().getHours();
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const today = new Date().getDay(); // Gets day index (0-6)
+    const currentTime = new Date().getHours();
 
-  const dayElements = document.querySelectorAll('.day-time');
-  dayElements[today].classList.add('current');
+    // Debug the current date and time
+    console.log('Debug - Current Date:', new Date().toLocaleString());
+    console.log('Debug - Day Index:', today);
+    console.log('Debug - Current Hour:', currentTime);
 
-  // Check if currently open
-  const timeElement = dayElements[today].querySelector('.time');
-  const [openHour, closeHour] = timeElement.textContent.split(' - ')
-      .map(time => parseInt(time.split(':')[0]));
+    const dayElements = document.querySelectorAll('.day-time');
+    
+    // Verify we have the correct number of day elements
+    console.log('Debug - Number of day elements:', dayElements.length);
 
-  if (currentTime >= openHour && currentTime < closeHour) {
-      dayElements[today].classList.add('current');
-  }
+    // First, remove any existing current/open/closed classes
+    dayElements.forEach(element => {
+        element.classList.remove('current', 'open', 'closed');
+    });
+
+    // Find the element for today
+    const todayElement = Array.from(dayElements).find(element => 
+        element.querySelector('.day').textContent.trim() === days[today]
+    );
+
+    if (todayElement) {
+        const timeElement = todayElement.querySelector('.time');
+        console.log('Debug - Today Element:', todayElement.innerHTML);
+        console.log('Debug - Time Element:', timeElement?.textContent);
+
+        if (timeElement) {
+            const timeText = timeElement.textContent.trim();
+            const [openTime, closeTime] = timeText.split(' - ');
+            const openHour = parseInt(openTime.split(':')[0]);
+            const closeHour = parseInt(closeTime.split(':')[0]);
+
+            console.log('Debug - Open Hour:', openHour);
+            console.log('Debug - Close Hour:', closeHour);
+            console.log('Debug - Current Hour:', currentTime);
+
+            // Add current class
+            todayElement.classList.add('current');
+
+            // Check if currently open
+            if (currentTime >= openHour && currentTime < closeHour) {
+                todayElement.classList.add('open');
+                console.log('Debug - Status: Open');
+            } else {
+                todayElement.classList.add('closed');
+                console.log('Debug - Status: Closed');
+            }
+        }
+    } else {
+        console.error('Could not find element for today:', days[today]);
+    }
 });
+ // Get current day and highlight it
+
 // THIS IS CONTACT JS CODE
  // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', () => {
